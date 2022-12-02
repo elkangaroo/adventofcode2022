@@ -2,30 +2,19 @@
 -- Output: Find the Elf carrying the most Calories. How many total Calories is that Elf carrying?
 print("Hello Day 1")
 
-function read(filename)
-    local elements = {}
-
-    file = io.open(filename, "r")
-    for line in file:lines() do
-        table.insert(elements, line)
-        -- print(line)
-    end
-    file:close()
-
-    return elements
-end
+require "common"
 
 function sum(input)
     local elements = {}
     local i = 1
 
-	for _, element in ipairs(input) do
-		if element ~= '' then
-			elements[i] = element + (elements[i] or 0)
-		else
-			i = i + 1
-		end
-	end
+    for _, element in ipairs(input) do
+        if element ~= '' then
+            elements[i] = element + (elements[i] or 0)
+        else
+            i = i + 1
+        end
+    end
 
     return elements
 end
